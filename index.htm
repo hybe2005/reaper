@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<link href="extern.html" rel="import" />
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="「BTS」のオフィシャルファンクラブサイトです。">
+<meta name="keywords" content="防弾少年団、BTS、バンタン、ボウダン、RAP MONSTER、JIN、SUGA、J-HOPE、JIMIN、V、JUNG KOOK">
+<meta property="og:site_name" content="Reapers Team Japan Official">
+<meta property="og:url" content="https://reapersteam.jp">
+<meta property="og:title" content="Reapers Team Japan Official">
+<meta property="og:description" content="「BTS」のオフィシャルファンクラブサイトです。">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://bts-official.jp/img/ogp.png">
+<meta property="fb:app_id" content="">
+<link rel="apple-touch-icon" sizes="180x180" href="https://files.bts-official.jp/files_fc/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://files.bts-official.jp/files_fc/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://files.bts-official.jp/files_fc/img/favicon-16x16.png">
+
+<link rel="mask-icon" href="https://files.bts-official.jp/files_fc/img/safari-pinned-tab.svg" color="#000000">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="theme-color" content="#ffffff">
+
+<title>BTS JAPAN OFFICIAL FANCLUB</title>
+<link rel="stylesheet" type="text/css" href="/Users/User/3D%20Objects/reset.css">
+<link rel="stylesheet" type="text/css" href="/Users/User/3D%20Objects/common.css">
+<link rel="stylesheet" type="text/css" href="/Users/User/3D%20Objects/slick.css">
+<link rel="stylesheet" type="text/css" href="/Users/User/3D%20Objects/slick-theme.css">
+<script type="text/javascript" src="/Users/User/3D%20Objects/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/Users/User/3D%20Objects/common.js"></script>
+
+<script type="text/javascript" src="/Users/User/3D%20Objects/top.js"></script>
+<script type="text/javascript" src="/Users/User/3D%20Objects/jquery.cookie.js"></script>
+<script type="text/javascript" src="/Users/User/3D%20Objects/slick.min.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+</script>
+
+
+<script type="text/javascript" charset="utf-8">
+;(function(){
+
+  var $$ = function(msg,action){
+    $$.prototype.setStyle();
+    $$.prototype.setBG();
+    $$.prototype.setDialog(msg,action);
+    if(typeof $$.prototype.scrollFlg === "undefined"){
+      $$LIB.prototype.setEvent(window,"scroll",$$.prototype.setDialogPosition);
+    }
+    $$.prototype.scrollFlg = true;
+  };
+  $$.prototype.setStyle = function(){
+    if(document.getElementById("alerter_css")!==null){
+    return;
+    }
+    var style  = document.createElement("style");
+    style.type = "text/css";
+    style.id   = "alerter_css";
+    var css = "";
+    css += "head,body{width:auto;height:auto;}"+"\n";
+    css += "body{position:relative;}"+"\n";
+    css += "#alerter{"+"\n";
+    css += "  position:absolute;"+"\n";
+    css += "  display:inline-block;"+"\n";
+    css += "  background-color:rgba(0,0,0,0.5);"+"\n";
+    css += "  width:100%;"+"\n";
+    css += "  height:100%;"+"\n";
+    css += "  top:0;"+"\n";
+    css += "  left:0;"+"\n";
+    css += "  mergin:0;"+"\n";
+    css += "  padding:8px;"+"\n";
+    css += "  z-index:10000;"+"\n";
+    css += "}"+"\n";
+    css += "#alerter > .alerter_dialog{"+"\n";
+    css += "  position:absolute;";
+    css += "  display:block;";
+    css += "  width:450px;";
+//    css += "  width:350px;";
+    css += "  background-color:#fff;";
+    css += "  margin:0 auto;";
+    css += "  padding:8px;";
+    css += "  border:0;";
+//    css += "  border-radius:4px;";
+    css += "}"+"\n";
+    css += "#alerter > .alerter_dialog > .alerter_text{"+"\n";
+    css += "  display:block;";
+    css += "  padding: 20px 20px;";
+    css += "  text-align: center;";
+//    css += "  min-height:40px;";
+//    css += "  line-height:20px;";
+//    css += "  padding:0;";
+    css += "}"+"\n";
+    css += "#alerter > .alerter_dialog > .alerter_btn{"+"\n";
+//    css += "  display:inline-block;";
+    css += "  position: relative;";
+    css += "  left:50%;;";
+    css += "  float:left;";
+    css += "  transform: translate(-50%, -20%);";
+    css += "  min-width:60px;";
+    css += "  min-height:40px;";
+    css += "  line-height:30px;";
+    css += "}"+"\n";
+    css += "#alerter > .alerter_dialog > .alerter_clear{"+"\n";
+    css += "  clear:both;";
+    css += "}"+"\n";
+    style.innerHTML = css;
+    document.getElementsByTagName("head")[0].appendChild(style);
+  };
+
+  $$.prototype.clickCheckBG = function(event){
+    var elm = event.target;
+    if(elm.id !== "alerter"){return;}
+    $$.prototype.delBG();
+  };
+
+  $$.prototype.setBG = function(){
+    $$.prototype.delBG();
+    var body = document.body;
+    var div = document.createElement("div");
+    div.id  = "alerter";
+    // div.onclick = $$.prototype.clickCheckBG;
+    document.body.appendChild(div);
+  };
+  $$.prototype.delBG = function(){
+    var alerter = document.getElementById("alerter");
+    if(alerter !== null){
+      alerter.parentNode.removeChild(alerter);
+    }
+  };
+
+  $$.prototype.setDialog = function(msg,action){
+    var alerter = document.getElementById("alerter");
+    if(alerter === null){return;}
+    var div = document.createElement("div");
+    div.className = "alerter_dialog";
+    var txt = document.createElement("div");
+    txt.className = "alerter_text";
+    txt.innerHTML = msg;
+    div.appendChild(txt);
+    var btn = document.createElement("button");
+    btn.className = "alerter_btn";
+    btn.type = "button";
+    btn.innerHTML = "OK";
+
+    div.appendChild(btn);
+    var clr = document.createElement("div");
+    clr.className = "alerter_clear";
+    div.appendChild(clr);
+    alerter.appendChild(div);
+    $$.prototype.setDialogPosition();
+    if(action){
+      // btn.onclick = action;
+      $$LIB.prototype.setEvent(btn,"click",action);
+      $$LIB.prototype.setEvent(btn,"click",$$.prototype.delBG);
+    }
+    else{
+      // btn.onclick = $$.prototype.delBG;
+      $$LIB.prototype.setEvent(btn,"click",$$.prototype.delBG);
+    }
+  };
+
+  $$.prototype.setDialogPosition = function(){
+    var dialog = document.querySelector("#alerter > .alerter_dialog");
+    if(dialog === null){return;}
+    var pos = $$.prototype.getCenterPosisition(dialog);
+    dialog.style.setProperty("top" , pos.y +"px", "");
+    dialog.style.setProperty("left", pos.x +"px", "");
+  };
+
+  $$.prototype.getCenterPosisition = function(elm){
+    var eW = elm.offsetWidth,
+        eH = elm.offsetHeight,
+        sX = window.pageXOffset,
+        sY = window.pageYOffset,
+        wW = window.innerWidth,
+        wH = window.innerHeight;
+    return {
+      x:(wW - eW)/2 + sX,
+      y:(wH - eH)/2 + sY
+    };
+  };
+
+  var $$LIB = function(){};
+
+  $$LIB.prototype.setEvent = function(target, mode, func){
+        //other Browser
+        if (typeof target.addEventListener !== "undefined"){
+      target.addEventListener(mode, func, false);
+    }
+    else if(typeof target.attachEvent !== "undefined"){
+      target.attachEvent('on' + mode, function(){func.call(target , window.event)});
+    }
+    };
+
+  window.$$ALERTER = $$;
+})();
+</script>
+
+<script type="text/javascript" charset="utf-8">
+function errorAlert() {
+    var enceErr = "";
+    if(enceErr != "") {
+        $$ALERTER(enceErr);
+    }
+}
+
+</script>
+</head>
+<body onload="errorAlert()">
+
+<div class="header">
+	<div class="wrapper">
+			<div class="logoArea"><h1><a href="/index.php">BTS JAPAN OFFICIAL FANCLUB</a></h1></div>
+		<div class="humberger-switch"><span></span><span></span><span></span>MENU</div>
+
+		<div class="humberger-area">
+			<div class="humberger-wrapper">
+			<div class="humberger-menu clearfix">
+				<div class="humberger-block">
+				<ul>
+				<li><a href="/news/"><span class="gm_news">NEWS</span></a></li>
+				<li><a href="/profile/"><span class="gm_profile">PROFILE</span></a></li>
+				<li><a href="/discography/"><span class="gm_discography">DISCOGRAPHY</span></a></li>
+				<li><a href="/schedule/"><span class="gm_schedule">SCHEDULE</span></a></li>
+				<li><a href="/shop/"><span class="gm_shop">SHOP</span></a></li>
+				<li><a href="/corner/"><span class="gm_corner">BTS CORNER</span></a></li>
+				<li><a href="/gallery/"><span class="gm_gallery">GALLERY</span></a></li>
+				<li><a href="/special/"><span class="gm_special">SPECIAL</span></a></li>
+				<li><a href="/ticket/"><span class="gm_ticket">TICKET</span></a></li>
+				<li class="sp_view"><a href="/mailmaga/"><span>MAIL MAGAZINE</span></a></li>
+				<li class="mailmag-icon"><a href="/mailmaga/"><img src="https://files.bts-official.jp/files_fc/img/mailmg-icon-black.png" alt="メルマガ登録"></a></li>
+				</ul>
+	<!-- Weverse logout -->
+		<!-- logout -->
+				<div class="accountBtn"><div class="login"><a href="/myaccount/login.php"><span>ログイン</span></a></div></div>
+				<div class="accountBtn"><div class="join sp_view"><a href="/regist/"><span>入会・継続</span></a></div></div>
+				<div class="accountBtn fixed"><div class="join-fixed pc_view"><a href="/regist/"><span>入会・継続</span></a></div></div>
+			
+		</div>
+				</div><!-- /humberger-block -->
+			</div><!-- /humberger-menu -->
+			</div>
+		</div><!-- /humberger-area -->
+	</div>
+</div><!-- /header -->
+
+
+	<div id="mainVisualArea">
+			<ul class="mainVisual-wrapper">
+					<li><a href="https://bts-officialshop.jp/collections/cd" target="_top"><img src="https://files.bts-official.jp/files/board/1246_7e25b0b8ef8a2cb66c77e634166abcb4.jpg" alt="j-hope_Mixtape01_FCPC"></a></li>
+						<li><a href="https://bts-officialshop.jp/collections/bts-recipe-book" target="_top"><img src="https://files.bts-official.jp/files/board/1245_a9fd5f16add878c7a6f18b438986b2c5.jpg" alt="RECIPE_BOOK_01_FCPC"></a></li>
+						<li><a href="https://bts-officialshop.jp/collections/bts-memories-of-2021" target="_top"><img src="https://files.bts-official.jp/files/board/1244_1a941e7edaf414f100c6d3fb4490ed3b.jpg" alt="BTS_21MM_01_FCPC"></a></li>
+						<li><a href="https://bts-officialshop.jp/collections/j-hope-solo-album-jack-in-the-box-official-merch" target="_top"><img src="https://files.bts-official.jp/files/board/1243_fb0ba1274b79c4887be5a2a5a6d907b9.jpg" alt="j-hope_Mixtape_Merch01_FCPC"></a></li>
+						<li><a href="https://bts-officialshop.jp/collections/play-tinytan" target="_top"><img src="https://files.bts-official.jp/files/board/1242_87a446bfd169a5ee8abdf87c3ad36513.jpg" alt="Play_TinyTAN_01_FCPC"></a></li>
+						<li><a href="https://bts-officialshop.jp/collections/tinytan-2nd-anniversary" target="_top"><img src="https://files.bts-official.jp/files/board/1240_b0184930070f7407da044c84a6426d54.jpg" alt="TinyTAN_2ndAnniversaryMerch01_FCPC"></a></li>
+						<li><a href="https://bts-officialshop.jp/collections/j-hope-solo-album-jack-in-the-box" target="_top"><img src="https://files.bts-official.jp/files/board/1239_354328adee7a8e09aa56e9ec7981ee61.jpg" alt="Jack-in-the-Box_01_FCPC"></a></li>
+				</ul>
+	</div><!-- //mainVisualArea -->
+
+	<div class="contents main">
+
+		<div class="column03 clearfix">
+
+		<div class="column-item left informationArea">
+			<div class="information-wrapper clearfix">
+			<a href="news/detail.php?nid=qn/5piKZH1k="><dl>
+				<dt class="title"><span class="title-text">J-HOPE Solo Album『Jack In The Box』アナログ盤発売決定！本日8月8日(月)より予約販売スタート！</span></dt>
+				<dd class="meta"><span class="data">8/8</span></dd>
+			</dl></a>
+			<a href="news/detail.php?nid=wVv/H3QGgiU="><dl>
+				<dt class="title"><span class="title-text">BTSが7名揃って登場！8月13日(土)配信のオーディション番組『&AUDITION - The Howling -』 に出演決定！</span></dt>
+				<dd class="meta"><span class="data">8/8</span></dd>
+			</dl></a>
+			<a href="news/detail.php?nid=rKULCxMMflU="><dl>
+				<dt class="title"><span class="title-text">BTS RECIPE BOOK 追加販売スタート！</span></dt>
+				<dd class="meta"><span class="data">7/29</span></dd>
+			</dl></a>
+			<a href="news/detail.php?nid=naD8L9TELRw="><dl>
+				<dt class="title"><span class="title-text">J-HOPE Solo Album『Jack In The Box』ストア別購入特典絵柄公開！</span></dt>
+				<dd class="meta"><span class="data">7/28</span></dd>
+			</dl></a>
+			</div>
+		</div><!-- //informationArea -->
+
+		<div class="column-item center mainMovieArea">
+		<div class="playlist yt-wrap"><iframe width="1280" height="720" src="https://www.youtube.com/embed?listType=playlist&list=PL5hrGMysD_Gv_KbOrsvLNWUSSjyBLGGZa&index=0&t=0s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+		</div>
+
+		<div class="column-item right socialArea">
+		<div class="twitter-wrapper"><a class="twitter-timeline" data-height="264" href="https://twitter.com/BTS_jp_official">Tweets by BTS_jp_official</a></div><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+		</div>
+
+		</div><!-- //column03 -->
+
+	</div><!-- /contents -->
+
+<div class="footer">
+	<div class="wrapper">
+	<div class="column05 clearfix">
+	<div class="footer-menu column-item">
+	<h6>BTSオフィシャルファンサイト</h6>
+	<ul>
+		<li><a href="/about/fanclub.php">ファンクラブについて</a></li>
+		<li><a href="/about/index.php">このサイトについて</a></li>
+		<li><a href="/about/terms.php">会員規約</a></li>
+		<li><a href="/about/privacy.php">プライバシーポリシー</a></li>
+		<li><a href="/about/shoprule.php">特定商取引法に基づく表示</a></li>
+		<li><a href="/about/faq.php">Q&A・お問い合わせ</a></li>
+	</ul>
+	</div>
+
+	<div class="contents-menu column-item">
+	<h6>コンテンツ一覧</h6>
+	<ul>
+		<li><a href="/news/"><span>NEWS</span></a></li>
+		<li><a href="/profile/"><span>PROFILE</span></a></li>
+		<li><a href="/discography/"><span>DISCOGRAPHY</span></a></li>
+		<li><a href="/schedule/"><span>SCHEDULE</span></a></li>
+		<li><a href="/shop/"><span>SHOP</span></a></li>
+		<li><a href="/mailmaga/"><span>MAIL MAGAZINE</span></a></li>
+	</ul>
+	</div>
+
+	<div class="contents-menu member-only column-item">
+	<h6>会員限定コンテンツ一覧</h6>
+	<ul>
+		<li><a href="/corner/"><span>BTS CORNER</span></a></li>
+		<li><a href="/gallery/"><span>GALLERY</span></a></li>
+		<li><a href="/special/"><span>SPECIAL</span></a></li>
+		<li><a href="/ticket/"><span>TICKET</span></a></li>
+	<!-- Weverse logout -->
+		<li><a href="/myaccount/"><span>MY ACCOUNT</span></a></li>
+		</ul>
+	</div>
+
+	<div class="family-site column-item">
+	<h6>ファミリーサイト</h6>
+	<ul>
+		<li><a href="https://twitter.com/BTS_jp_official" target="_blank">Twitter@BTS_jp_official</a></li>
+		<li><a href="https://www.youtube.com/user/BTSjapanofficial" target="_blank">JAPAN OFFICIAL Youtube</a></li>
+		<li><a href="http://bts.ibighit.com/" target="_blank">KOREA OFFICIAL SITE</a></li>
+		<li><a href="https://bts-officialshop.jp/pages/lkwb" target="_blank">Learn! KOREAN with BTS Japan Edition 特設サイト</a></li>
+	</ul>
+	</div>
+
+	<div class="other-area column-item">
+	<div class="mailmag-btn">
+		<h6>メールマガジンを受け取る</h6>
+		<a href="/mailmaga/">無料メルマガ登録</a>
+	</div>
+	
+	<div class="regist-btn">
+		<h6>ファンクラブ会員登録をする</h6>
+		<a href="/regist/">新規会員登録</a>
+	</div>
+
+	<div class="cheering-btn"><a href="/project/cheering.php">掛け声／応援方法</a></div>
+	</div>
+	</div><!-- /column06 -->
+
+	<div class="copyright">
+		<p>&copy; 2022 Reapers Studios / HAIK. All Rights Reserved.</p>
+	</div>
+
+	</div>
+</div><!-- //footer -->
+
+
+
+<div id="pageup"><a href="#up">ページトップへ</a></div>
+</body>
+</html>
